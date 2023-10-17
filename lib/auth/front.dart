@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:login_page/auth/forget_password.dart';
 import 'package:login_page/auth/login.dart';
 
 class frontPage extends StatefulWidget {
@@ -48,30 +49,38 @@ class _frontPageState extends State<frontPage> {
             ),
           ),
           Center(
-              child: Padding(
-            padding: EdgeInsets.all(20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                    decoration: BoxDecoration(),
-                    child: Row(
-                      children: [
-                        ElevatedButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => loginPage()));
-                            },
-                            child: Text("Sign in")),
-                        ElevatedButton(
-                            onPressed: () {}, child: Text("Register"))
-                      ],
-                    ))
-              ],
+            child: Padding(
+              padding: EdgeInsets.all(20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                      decoration: BoxDecoration(),
+                      child: Row(
+                        children: [
+                          ElevatedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => loginPage()));
+                              },
+                              child: Text("Sign in")),
+                          ElevatedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            forgetPassword()));
+                              },
+                              child: Text("Register"))
+                        ],
+                      ))
+                ],
+              ),
             ),
-          ))
+          ),
         ],
       ),
     );
